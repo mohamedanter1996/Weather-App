@@ -54,6 +54,13 @@ function getDayName(date){
     return dayName;
 }
 
+function getWindDirection(Direction){
+    let windDirection=new Map().set("NNE","north-northeast").set("NE","northeast").set("ENE","east-northeast").set("E","east").set("ESE","east-southeast").set("SE","southeast").set("SSE","south-southeast").set("S","south").set("SSW","south-southwest").set("SW","southwest").set("WSW","west-southwest").set("W","west").set("WNW","west-northwest").set("NW","northwest").set("NNW","north-northwest").set("N","north");
+    return windDirection.get(Direction);
+}
+
+
+
 async function getWeatherData(city){
     let cityWeatherAllData=await fetch(`https://api.weatherapi.com/v1/forecast.json?key=afaa4c8f86ae47ec9ec201302231108&q=${city}&days=3`)
     let cityWeatherDesiredData=await cityWeatherAllData.json();
@@ -72,7 +79,7 @@ dayImgIndication.setAttribute("src",`https://${weatherData.current.condition.ico
 dayTextIndication.innerHTML=weatherData.current.condition.text;
 dayUmbrella.innerHTML=`${weatherData.forecast.forecastday[0].hour[new Date().getHours()].chance_of_rain}%`;
 dayWind.innerHTML=` ${weatherData.current.wind_kph} km/h`;
-dayCompass.innerHTML=weatherData.current.wind_dir;
+dayCompass.innerHTML=getWindDirection(weatherData.current.wind_dir)==undefined?weatherData.current.wind_dir:getWindDirection(weatherData.current.wind_dir);
 
 dayTomorrowName.innerHTML=getDayName(weatherData.forecast.forecastday[1].date);
 dateTomorrowName.innerHTML=`${getDayDate(weatherData.forecast.forecastday[1].date)} ${getMonthName(weatherData.forecast.forecastday[1].date)}`;
@@ -82,7 +89,7 @@ dayTomorrowMinDegree.innerHTML=weatherData.forecast.forecastday[1].day.mintemp_c
 dayTomorrowTextIndication.innerHTML=weatherData.forecast.forecastday[1].day.condition.text;
 dayTomorrowUmbrella.innerHTML=` ${weatherData.forecast.forecastday[1].hour[new Date().getHours()].chance_of_rain}%`;
 dayTomorrowWind.innerHTML=` ${weatherData.forecast.forecastday[1].hour[new Date().getHours()].wind_kph} km/h`;
-dayTomorrowCompass.innerHTML=weatherData.forecast.forecastday[1].hour[new Date().getHours()].wind_dir;
+dayTomorrowCompass.innerHTML=getWindDirection(weatherData.forecast.forecastday[1].hour[new Date().getHours()].wind_dir)==undefined?weatherData.forecast.forecastday[1].hour[new Date().getHours()].wind_dir:getWindDirection(weatherData.forecast.forecastday[1].hour[new Date().getHours()].wind_dir);
 
 dayAfterTomorrowName.innerHTML=getDayName(weatherData.forecast.forecastday[2].date);
 dateAfterTomorrowName.innerHTML=`${getDayDate(weatherData.forecast.forecastday[2].date)} ${getMonthName(weatherData.forecast.forecastday[2].date)}`;
@@ -92,7 +99,7 @@ dayAfterTomorrowMinDegree.innerHTML=weatherData.forecast.forecastday[2].day.mint
 dayAfterTomorrowTextIndication.innerHTML=weatherData.forecast.forecastday[2].day.condition.text;
 dayAfterTomorrowUmbrella.innerHTML=` ${weatherData.forecast.forecastday[2].hour[new Date().getHours()].chance_of_rain}%`;
 dayAfterTomorrowWind.innerHTML=` ${weatherData.forecast.forecastday[2].hour[new Date().getHours()].wind_kph} km/h`;
-dayAfterTomorrowCompass.innerHTML=weatherData.forecast.forecastday[2].hour[new Date().getHours()].wind_dir;
+dayAfterTomorrowCompass.innerHTML=getWindDirection(weatherData.forecast.forecastday[2].hour[new Date().getHours()].wind_dir)==undefined?weatherData.forecast.forecastday[2].hour[new Date().getHours()].wind_dir:getWindDirection(weatherData.forecast.forecastday[2].hour[new Date().getHours()].wind_dir);
 
 
 }

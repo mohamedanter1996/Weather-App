@@ -1,0 +1,197 @@
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+p a.navbar-brand{
+    font-size: 0.75rem;
+}
+
+nav .navbar-nav .nav-link {
+    
+    padding: 5px 25px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    color: white;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    font-weight: 400;
+}
+
+nav .navbar-nav .nav-link.active ,nav .navbar-nav .nav-link:hover{
+    border-color: #009ad8;
+    color: #009ad8;
+}
+header{
+    background-image: url("../imgs/banner.png");
+   
+    background-size: cover;
+    padding: 70px 0px;
+    min-height: 350px;
+   
+}
+
+
+
+header .container .inputs .form-control{
+padding: 15px 0.75rem;
+color: white;
+}
+
+header .container .inputs .btn{
+    top:5px;
+    right: 5px;
+   bottom: 5px;
+    padding: 5px 25px;
+}
+
+.container .inputs .form-control::placeholder{
+    color: #757575;
+}
+
+header .container .inputs .btn-primary{
+    background-color: #009ad8;
+}
+
+
+
+.black-rock-bg{
+    background-color: #2D303D;
+}
+
+.bg-Revolver{
+    background-color: #353244;
+}
+
+.rounded-start-top{
+    border-top-left-radius: 8px;
+}
+
+.rounded-start-bottom{
+    border-bottom-left-radius: 8px;
+}
+
+.rounded-end-bottom{
+    border-bottom-right-radius: 8px; 
+}
+
+.rounded-end-top{
+    border-top-right-radius: 8px; 
+}
+
+.text-Alto{
+    color: #BFC1C8;
+}
+
+.text-Pacific-Blue{
+    color: #009AD8;
+}
+
+.bg-Black-Russian{
+    background-color: #222530;
+}
+
+.bg-Midnight-Express{
+    background-color: #262936;
+}
+.extra-data:has(#dayCompass){
+    margin-top: 11px;
+}
+
+
+
+section .container{
+position: relative;
+top:-120px;
+
+    
+}
+
+footer{
+    padding: 50px 0px;
+   
+    
+}
+footer .container .inputs .form-control{
+    padding: 15px 0.75rem;
+    }
+
+footer .container .inputs .btn{
+top: 5px;
+right: 5px;
+bottom: 5px;
+    padding: 5px 25px;
+}
+
+footer .container .inputs .btn-primary{
+    background-color: #009ad8;
+}
+
+footer .container .media-links .media-link{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1e202b;
+    color: #009ad8;
+    transition: all 0.5s;
+}
+
+footer .container .media-links .media-link:hover{
+    background-color: #009AD8;
+}
+
+footer .container .media-links .media-link a{
+    color: #009ad8;
+}
+
+footer .container .media-links .media-link:hover a{
+   color: white;
+}
+
+.text-Link-Water{
+    color: #BFC1C8;
+}
+
+@media (max-width: 1200px){
+    .extra-data:has(#dayCompass){
+        margin-top: 19px;
+    }
+}
+
+@media (max-width: 992px){
+    .extra-data:has(#dayCompass){
+        margin-top: 27px;
+    }
+}
+
+@media (max-width: 855px){
+    .extra-data:has(#dayCompass){
+       margin-top: 29px;
+    }
+}
+
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 5px 25px;
+    }
+
+    
+}
+
+
+@media (max-width: 768px){
+   section .container .row .col-md-4 .item .date:has(#dayName){
+    border-top-right-radius: 8px; 
+   }
+   section .container .row .col-md-4 .item .item-data:has(#countryName){
+    border-bottom-left-radius: 0px;
+       }
+
+       section .container .row .col-md-4 .item .date:has(#dayAfterTomorrowName){
+        border-top-right-radius:0px; 
+       }
+       section .container .row .col-md-4 .item .item-data:has(#dayAfterTomorrowImgIndication){
+        border-bottom-left-radius: 8px;
+           }
+}

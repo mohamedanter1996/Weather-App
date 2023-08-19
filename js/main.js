@@ -70,7 +70,7 @@ countryName.innerHTML=weatherData.location.name;
 dayDegree.innerHTML=weatherData.current.temp_c;
 dayImgIndication.setAttribute("src",`https://${weatherData.current.condition.icon}`);
 dayTextIndication.innerHTML=weatherData.current.condition.text;
-dayUmbrella.innerHTML=`${weatherData.forecast.forecastday[0].day.daily_chance_of_rain}%`;
+dayUmbrella.innerHTML=`${weatherData.forecast.forecastday[0].hour[new Date().getHours()].chance_of_rain}%`;
 dayWind.innerHTML=` ${weatherData.current.wind_kph} km/h`;
 dayCompass.innerHTML=weatherData.current.wind_dir;
 
